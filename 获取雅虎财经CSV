@@ -1,0 +1,10 @@
+import datetime as dt
+import pandas as pd
+from pandas_datareader import data as pdr
+
+
+start = dt.datetime(1990,1,1)
+end = dt.datetime(2018,7,31)
+
+df = pdr.DataReader("^GSPC", 'yahoo', start, end)
+df.to_csv('SP500.csv')
